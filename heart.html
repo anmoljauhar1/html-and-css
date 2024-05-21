@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: rgba(34, 22, 35, 0.333);
+            /* box-sizing: border-box; */
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .heart{
+            background-color: #fd1644;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform: rotate(-45deg);
+            box-shadow: 5px 5px 90px #fd1644;
+        
+            animation-name: heart;
+            animation-iteration-count: infinite;
+            animation-duration: 0.7s;
+            cursor: pointer;
+
+        }
+        @keyframes heart{
+            0%{transform: rotate(-45deg) scale(0.8)}
+
+            70%{
+                transform: rotate(-45deg) scale(1.1);
+            }
+            100%{
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+        .heart::before{
+            content: "";
+            position: absolute;
+            top: -50%;
+            width: 100px;
+            height: 100px;
+            background-color: #fd1644;
+            border-radius: 50px;
+            box-shadow: 5px -5px 90px #fd1644;
+        
+        }
+        .heart::after{
+            content: "";
+            position: absolute;
+            right: -50%;
+            width: 100px;
+            height: 100px;
+            background-color: #fd1644;
+            border-radius: 50px;
+            box-shadow: 5px -5px 90px #fd1644;
+           
+        }
+
+    </style>
+</head>
+<body>
+
+       <div class="container">
+        <div class="heart">
+        </div>
+       </div>
+
+    
+</body>
+</html>
